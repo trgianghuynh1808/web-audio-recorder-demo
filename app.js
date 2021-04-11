@@ -10,6 +10,8 @@ const muteAudioBtn = document.getElementById("mute-icon");
 const seekSlider = document.getElementById("seek-slider");
 const volumeSlider = document.getElementById("volume-slider");
 const audioPlayerContainer = document.getElementById("audio-player-container");
+const nextBtn = document.getElementById("next-icon");
+const previousBtn = document.getElementById("previous-icon");
 
 let audioContext, input, encodingType, recorder, curStream;
 let playState = "play";
@@ -242,4 +244,18 @@ volumeSlider.addEventListener("input", (e) => {
 
   outputContainer.textContent = value;
   audio.volume = value / 100;
+});
+
+nextBtn.addEventListener("click", () => {
+  audio.currentTime += 10;
+  if (!audio.paused) {
+    requestAnimationFrame(whilePlaying);
+  }
+});
+
+previousBtn.addEventListener("click", () => {
+  audio.currentTime -= 10;
+  if (!audio.paused) {
+    requestAnimationFrame(whilePlaying);
+  }
 });
