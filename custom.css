@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+#audioPlayer {
+  position: relative;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px;
+  height: 80px;
+  background: #fff;
+}
+#audioPlayer::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(to left, #007db5, #ff8a00);
+  z-index: -1;
+}
+
+p {
+  position: absolute;
+  top: -18px;
+  right: 5%;
+  padding: 0 5px;
+  margin: 0;
+  font-size: 28px;
+  background: #fff;
+}
+
+#playBtn {
+  margin: 20px 2.5% 20px 2.5%;
+}
+
+path {
+  stroke: #007db5;
+}
