@@ -12,6 +12,7 @@ const volumeSlider = document.getElementById("volume-slider");
 const audioPlayerContainer = document.getElementById("audio-player-container");
 const nextBtn = document.getElementById("next-icon");
 const previousBtn = document.getElementById("previous-icon");
+const downloadLink = document.getElementById("download-link");
 
 let audioContext, input, encodingType, recorder, curStream;
 let playState = "play";
@@ -116,6 +117,8 @@ function startRecord() {
 
       startRecordBtn.disabled = true;
       stopRecordBtn.disabled = false;
+
+      audioPlayerContainer.style.visibility = "hidden";
     })
     .catch(function () {
       startRecordBtn.disabled = false;
@@ -135,23 +138,16 @@ function stopRecord() {
 
 function createAudio(blob, encoding) {
   const url = URL.createObjectURL(blob);
-  const audioEle = document.createElement("audio");
-  const liEle = document.createElement("li");
-  const linkEle = document.createElement("a");
 
   //add src & control for audio element
-  audioEle.controls = false;
-  audioEle.src = url;
+  audio.src = url;
 
-  //create link download from blob
-  linkEle.href = url;
-  linkEle.download = new Date().toISOString() + "." + encoding;
-  linkEle.innerHTML = linkEle.download;
+  // create link download from blob
+  downloadLink.href = url;
+  downloadLink.download = new Date().toISOString() + "." + encoding;
+  downloadLink.innerHTML = downloadLink.download;
 
-  liEle.appendChild(audioEle);
-  liEle.appendChild(linkEle);
-
-  recordingList.appendChild(liEle);
+  audioPlayerContainer.style.visibility = "visible";
 }
 
 const showRangeProgress = (rangeInput) => {

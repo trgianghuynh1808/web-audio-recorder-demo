@@ -31,39 +31,29 @@
       <button id="stop-btn" type="button" class="btn btn-danger mt-3" disabled>
         Stop Recording
       </button>
-      <ol
-        id="recording-list"
-        class="mt-3"
-        style="list-style-type: none; padding-left: 0px !important"
-      >
-        <li>
-          <div id="audio-player-container">
-            <audio
-              src="https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"
-              preload="metadata"
-              loop
-            ></audio>
-            <p>Audio Player</p>
-            <button id="play-icon"></button>
-            <span id="current-time" class="time">0:00</span>
-            <input type="range" id="seek-slider" max="100" value="0" />
-            <span id="duration" class="time">0:00</span>
-            <button id="next-icon">
-              <img
-                src="https://img.icons8.com/ultraviolet/40/000000/fast-forward.png"
-              />
-            </button>
-            <button id="previous-icon">
-              <img
-                src="https://img.icons8.com/ultraviolet/40/000000/rewind.png"
-              />
-            </button>
-            <output id="volume-output">100</output>
-            <input type="range" id="volume-slider" max="100" value="100" />
-            <button id="mute-icon"></button>
-          </div>
-        </li>
-      </ol>
+
+      <div id="audio-player-container">
+        <audio
+          src="https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"
+          preload="metadata"
+        ></audio>
+        <a href="#" id="download-link">Audio Player</a>
+        <button id="play-icon"></button>
+        <span id="current-time" class="time">0:00</span>
+        <input type="range" id="seek-slider" max="100" value="0" />
+        <span id="duration" class="time">0:00</span>
+        <button id="next-icon">
+          <img
+            src="https://img.icons8.com/ultraviolet/40/000000/fast-forward.png"
+          />
+        </button>
+        <button id="previous-icon">
+          <img src="https://img.icons8.com/ultraviolet/40/000000/rewind.png" />
+        </button>
+        <output id="volume-output">100</output>
+        <input type="range" id="volume-slider" max="100" value="100" />
+        <button id="mute-icon"></button>
+      </div>
     </div>
 
     <script
